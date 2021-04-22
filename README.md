@@ -7,3 +7,10 @@ MPDB also has multiple additional functions:
 1. Predict movie/TV series genres based on posters
 
 2. Perform sentiment analysis on movie reviews
+
+
+
+
+Datasets:
+1. Genre predictor:
+- https://www.kaggle.com/neha1703/movie-genre-from-its-poster/version/3
