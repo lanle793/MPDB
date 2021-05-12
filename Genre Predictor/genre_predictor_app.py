@@ -10,8 +10,17 @@ import datetime
 app = Flask(__name__)
 
 
+# include these methods for use by saved model
+def get_x(r):
+    return path + 'train_data/' + r['id'].astype(str) + '.jpg'
+
+def get_y(r):
+    return r['genres']
+
+
 learn = load_learner('./model/single_label/single_genre_predictor_fastai.pkl')
-classes = learn.data.classes
+classes = learn.dls.vocab
+
 
 
 @app.route('/')
@@ -31,7 +40,7 @@ def predict_genre(img_file):
 
     return response
 
-@app.route('/predict', method=['POST'])
+@app.route('/predict', methods=['POST'])
 def predict():
     return jsonify(predict_genre(request.files['image']))
 
