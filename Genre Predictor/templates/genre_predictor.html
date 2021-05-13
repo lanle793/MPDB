@@ -3,17 +3,33 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title>Genre Predictor - Movie Posters</title>
+    <title>Genre Predictor with Movie Posters</title>
 </head>
 
 <body>
-    <form id="form" method="post" action="">
+    <h1> Genre Predictor </h1>
+    <form id="form" method="post" action="{{ url_for('predict') }}">
         <div class="form-group">
             <label for="poster"> Upload a poster</label>
             <br />
-            <button type="button" name="poster" id="upload">Choose Image File</button>
+            <input type="file" name="poster" id="poster" accept="image/png, image/jpg, image/jpeg" />
         </div>
-        <button id="entry" type="submit">Submit</button>
+        <div class="preview">
+            <p>No files currently selected for upload</p>
+        </div>
+        <div>
+            <button>Submit</button>
+        </div>
     </form>
+
+    <div class="result" align="center">
+        
+    </div>
+
+    <div>
+        <img src="../static/imgs/ad-astra.jpg" />
+        <img src="../static/imgs/dark-phoenix.jpg" />
+        <img src="../static/imgs/parasite.jpg" />
+    </div>
 </body>
 </html>

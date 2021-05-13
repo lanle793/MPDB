@@ -45,7 +45,7 @@ def predict():
     return jsonify(predict_genre(request.files['image']))
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
 
 
 
