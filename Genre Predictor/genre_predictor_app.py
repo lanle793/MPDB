@@ -42,7 +42,7 @@ def predict_genre(img_file):
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    return jsonify(predict_genre(request.files['image']))
+    return jsonify(predict_genre(request.files['poster']))
 
 if __name__ == '__main__':
     app.run(debug=True)
