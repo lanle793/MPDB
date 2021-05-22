@@ -3,22 +3,24 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Genre Predictor with Movie Posters</title>
 </head>
 
 <body>
-    <h1> Genre Predictor </h1>
+    <h1 class="text-white bg-dark d-flex justify-content-center"> Genre Predictor </h1>
+
     <form id="form" method="post" action="{{ url_for('predict') }}">
         <div class="form-group">
-            <label for="poster"> Upload a poster</label>
+            <label for="poster" class="font-weight-bold"> Upload a poster</label>
             <br />
             <input type="file" name="poster" id="poster" multiple="false" accept="image/png, image/jpg, image/jpeg" onchange="displayImage(input)" />
         </div>
-        <div class="preview">
+        <div class="preview d-flex justify-content-center">
             <img src="" id="preview">
         </div>
-        <div>
-            <button>Submit</button>
+        <div class="d-flex justify-content-center">
+            <button class="btn btn-dark">Submit</button>
         </div>
     </form>
 
@@ -26,11 +28,6 @@
         
     </div>
 
-    <div>
-        <img src="../static/imgs/ad-astra.jpg" />
-        <img src="../static/imgs/dark-phoenix.jpg" />
-        <img src="../static/imgs/parasite.jpg" />
-    </div>
     <script type="text/javascript" src="genre_predictor.js"></script>
 </body>
 </html>

@@ -13,6 +13,8 @@ function displayImage(input) {
 
         reader.onload = function(e) {
             preview.setAttribute('src', e.target.result);
+            preview.setAttribute('width', 300);
+            preview.setAttribute('height', 500);
         }
 
         reader.readAsDataURL(input.files[0]);
