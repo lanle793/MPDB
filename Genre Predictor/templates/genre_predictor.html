@@ -10,6 +10,12 @@
 <body>
     <h1 class="text-white bg-dark d-flex justify-content-center"> Genre Predictor </h1>
 
+    <p class="text-center">
+        Have you ever realized how much information about a movie you can extract from its poster alone? 
+        Using deep learning, we can predict a movie genre just by looking at its poster.<br>
+        <u class="bg-primary text-white">Upload an image of a movie poster and try it for yourself!</u>
+    </p>
+
     <form id="form" method="post" action="{{ url_for('predict') }}">
         <div class="form-group">
             <label for="poster" class="font-weight-bold"> Upload a poster</label>
