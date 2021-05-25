@@ -1,2 +1,2 @@
 
-Genre Predictor/data/posters/*.jpg
+/Genre Predictor/data/**/*.jpg
