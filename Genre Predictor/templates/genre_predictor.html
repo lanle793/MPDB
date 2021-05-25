@@ -13,28 +13,28 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-4">
-                <img src="../static/jeet-dhanoa-me3vI8dFz5A-unsplash.jpg" alt="Movie Poster Book" class="img-responsive" width="100%">
+                <img src="../static/imgs/jeet-dhanoa-me3vI8dFz5A-unsplash.jpg" alt="Movie Poster Book" class="img-responsive" width="100%">
             </div>
             <div class="col-4">
-                <img src="../static/serge-kutuzov-7ya3l_JdHpM-unsplash.jpg" alt="Suicide Squad Poster" class="img-responsive" width="100%">
+                <img src="../static/imgs/serge-kutuzov-7ya3l_JdHpM-unsplash.jpg" alt="Suicide Squad Poster" class="img-responsive" width="100%">
             </div>
             <div class="col-4">
-                <img src="../static/steven-lasry-LtDKx9ICQuI-unsplash.jpg" alt="Judy Poster" class="img-responsive" width="100%">
+                <img src="../static/imgs/steven-lasry-LtDKx9ICQuI-unsplash.jpg" alt="Judy Poster" class="img-responsive" width="100%">
             </div>
         </div>
     </div>
 
-    <p class="text-center">
+    <h4 class="text-center">
         Have you ever realized how much information about a movie you can extract from its poster alone? 
         Using deep learning, we can predict a movie genre just by looking at its poster.<br>
         <u class="bg-primary text-white">Upload an image of a movie poster and try it for yourself!</u>
-    </p>
+    </h4>
 
-    <form id="form" method="post" action="{{ url_for('predict') }}">
+    <form id="form" method="post" action="{{ url_for('predict') }}" enctype="multipart/form-data">
         <div class="form-group">
             <label for="poster" class="font-weight-bold"> Upload a poster</label>
             <br />
-            <input type="file" name="poster" id="poster" multiple="false" accept="image/png, image/jpg, image/jpeg" onchange="displayImage(input)" />
+            <input type="file" name="poster" id="poster" accept="image/png, image/jpg, image/jpeg" onchange="displayImage(input)" />
         </div>
         <div class="preview d-flex justify-content-center">
             <img src="" id="preview">
@@ -48,6 +48,6 @@
         
     </div>
 
-    <script type="text/javascript" src="genre_predictor.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/genre_predictor.js') }}"></script>
 </body>
 </html>

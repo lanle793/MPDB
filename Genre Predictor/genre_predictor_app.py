@@ -49,4 +49,6 @@ if __name__ == '__main__':
 
 
 
-# Reference: https://medium.com/usf-msds/creating-a-web-application-powered-by-a-fastai-model-d5ee560d5207
+# Reference: 
+# 1. https://medium.com/usf-msds/creating-a-web-application-powered-by-a-fastai-model-d5ee560d5207
+# 2. https://github.com/npatta01/web-deep-learning-classifier
