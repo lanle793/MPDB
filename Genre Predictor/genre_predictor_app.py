@@ -1,10 +1,13 @@
 
 from flask import Flask, request
 from flask import render_template, jsonify
+
 from fastai.learner import load_learner
-from fastai.vision.core import load_image
+from fastai.vision.core import PILImage
+
 import pickle
-import datetime
+import os
+
 
 
 app = Flask(__name__)
@@ -27,22 +30,26 @@ classes = learn.dls.vocab
 def main_page():
     return render_template('genre_predictor.html')
 
+
 def predict_genre(img_file):
+    # save image to display after prediction
+    path = 'static/tmp'
+    if not os.path.exists(path):
+        os.mkdir(path)
+    path = os.path.join(path, 'tmp.jpg')
+    img_file.save(path)
+
     # get poster image and return prediction
-    prediction = learn.predict(load_image(img_file))
+    prediction = learn.predict(PILImage.create(img_file))
     predicted_genre = classes[prediction[1].item()]
 
-    response = {
-        'status': 200,
-        'prediction': predicted_genre,
-        'created_at': datetime.datetime.now()
-    }
+    return render_template('predict.html', prediction=predicted_genre)
 
-    return response
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    return jsonify(predict_genre(request.files['poster']))
+    file = request.files['poster']
+    return predict_genre(file)
 
 if __name__ == '__main__':
     app.run(debug=True)
@@ -51,4 +58,4 @@ if __name__ == '__main__':
 
 # Reference: 
 # 1. https://medium.com/usf-msds/creating-a-web-application-powered-by-a-fastai-model-d5ee560d5207
-# 2. https://github.com/npatta01/web-deep-learning-classifier
+# 2. https://medium.com/@nutanbhogendrasharma/deploy-machine-learning-model-with-flask-on-heroku-cd079b692b1d

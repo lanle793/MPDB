@@ -45,7 +45,7 @@
     </form>
 
     <div class="result">
-        
+        {% block content %}{% endblock %}
     </div>
 
     <script type="text/javascript" src="{{ url_for('static', filename='js/genre_predictor.js') }}"></script>
