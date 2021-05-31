@@ -3,8 +3,6 @@ adabound==0.0.5
 aiodns==1.1.1
 aiohttp==3.6.2
 alabaster==0.7.12
-anaconda-navigator==1.9.7
-anaconda-project==0.8.3
 appdirs==1.4.4
 applaunchservices==0.2.1
 appnope==0.1.0
@@ -52,10 +50,6 @@ Click==7.0
 cloudpickle==1.2.2
 clyent==1.2.2
 colorama==0.4.3
-conda==4.8.3
-conda-build==3.10.5
-conda-package-handling==1.6.0
-conda-verify==3.4.2
 constantly==15.1.0
 contextlib2==0.6.0.post1
 cryptography==2.8
