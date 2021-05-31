@@ -1,0 +1,1 @@
+web: gunicorn genre_predictor_app:app
