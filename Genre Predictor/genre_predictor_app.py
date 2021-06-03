@@ -5,6 +5,8 @@ from flask import render_template, jsonify
 from fastai.learner import load_learner
 from fastai.vision.core import PILImage
 
+from waitress import serve
+
 import pickle
 import os
 
@@ -52,7 +54,8 @@ def predict():
     return predict_genre(file)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    #app.run(debug=True)
+    serve(app, host='0.0.0.0', port=80)
 
 
 
