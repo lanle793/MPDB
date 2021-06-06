@@ -1,0 +1,4 @@
+/Genre Predictor/static/tmp
+/Genre Predictor/model/multi_label
+/Genre Predictor/data
+*.pem
